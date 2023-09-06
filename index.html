@@ -7,15 +7,13 @@
     <title>Phoenix Reborn</title>
   </head>
   <body>
-    <h1>Vite Phaser Game</h1>
-    <p>
-      This is an example of setting up a Phaser, TypeScript, Vite game. See
-      <a href="https://github.com/ubershmekel/vite-phaser-ts-starter">source on github</a>.
-    </p>
+    <h1 style="text-align: center">Phoenix Reborn</h1>
     <div class="window-controls">
       <button onclick="_game.scale.toggleFullscreen()">fullscreen</button>
       <button onclick="_game.sound.mute = !_game.sound.mute">mute</button>
       <button onclick="window.location.reload(true)">refresh</button>
+      <div style="margin-left: 20px">HP: <span id="hp">20</span></div>
+      <div style="margin-left: 20px">Money: $<span id="money">0</span></div>
     </div>
     <div id="app"></div>
     <script type="module" src="/src/main.ts"></script>

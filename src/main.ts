@@ -1,16 +1,19 @@
 import './style.css';
 import 'phaser';
+import { GameScene } from './GameScene';
+import { GameOver } from './GameOver';
 
 const GameConfig: Phaser.Types.Core.GameConfig = {
   title: 'ExampleGame',
   url: 'https://github.com/digitsensitive/phaser3-typescript',
   version: '2.0',
-  width: 800,
-  height: 600,
+  width: 384,
+  height: 256,
   type: Phaser.AUTO,
   parent: 'app',
   // `as as Phaser.Types.Scenes.SettingsConfig[]` is required until https://github.com/photonstorm/phaser/pull/6235
   // scene: [menu()] as Phaser.Types.Scenes.SettingsConfig[],
+  scene: [GameScene, GameOver],
   input: {
     keyboard: true,
   },
@@ -21,8 +24,8 @@ const GameConfig: Phaser.Types.Core.GameConfig = {
       debug: false,
     },
   },
-  backgroundColor: '#300000',
-  render: { pixelArt: false, antialias: true },
+  backgroundColor: '#d3d3d3',
+  render: { pixelArt: true, antialias: true },
   scale: {
     mode: Phaser.Scale.FIT,
     autoCenter: Phaser.Scale.CENTER_BOTH,
