@@ -97,6 +97,10 @@ export class GameScene extends Phaser.Scene {
       return null;
     });
 
+    if (this.enemies.length === 0) {
+      this.scene.start('GameOver');
+    }
+
     for (let enemy of this.enemies) {
       let phase = enemy.getData('phase');
       if (phase === 1) {
@@ -173,6 +177,10 @@ export class GameScene extends Phaser.Scene {
       }
       let collider = enemy.getData('collider') as Phaser.Physics.Arcade.Collider;
       collider.destroy();
+      let index = this.enemies.indexOf(enemy);
+      if (index !== -1) {
+        this.enemies.splice(index, 1);
+      }
       enemy.destroy();
     } else enemy.setData('hp', hp);
   }
